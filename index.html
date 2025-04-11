@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gửi tới Phạm Thuỳ Linh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+      background-size: cover;
+      background-position: center;
+      font-family: 'Dancing Script', cursive;
+      text-align: center;
+      padding: 40px;
+      color: #fff0f5;
+    }
+
+    h1, p {
+      color: #ffe4e1;
+      font-weight: normal;
+      font-size: 22px;
+      margin: 20px 0;
+      animation: fadeIn 2s ease-in-out;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .heart {
+      width: 40px;
+      height: 40px;
+      background-color: red;
+      transform: rotate(-45deg);
+      position: relative;
+      margin: 20px auto;
+      animation: explode 1s ease-in-out forwards;
+    }
+
+    .heart::before, .heart::after {
+      content: "";
+      width: 40px;
+      height: 40px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -20px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 20px;
+      top: 0;
+    }
+
+    @keyframes explode {
+      0% {
+        transform: scale(0) rotate(-45deg);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1.2) rotate(-45deg);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .button {
+      padding: 12px 25px;
+      font-size: 18px;
+      color: white;
+      background-color: #ff69b4;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+      box-shadow: 0 0 10px pink;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .float-left {
+      position: absolute;
+      left: 20px;
+      bottom: 100px;
+    }
+
+    .float-right {
+      position: absolute;
+      right: 20px;
+      bottom: 100px;
+    }
+
+    img {
+      max-width: 150px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px white;
+    }
+  </style>
+</head>
+<body>
+
+<audio id="music" autoplay loop>
+  <source src="noinaycoanh.mp3" type="audio/mpeg">
+</audio>
+
+<button class="button" onclick="startSequence()">Bấm vào đây nè</button>
+
+<div id="step1" class="hidden">
+  <h1>Xin chào Phạm Thuỳ Linh , mình là người yêu bạn 💖</h1>
+  <div class="heart"></div>
+  <button class="button float-left" onclick="step2()">Bấm tiếp vào đây</button>
+</div>
+
+<div id="step2" class="hidden">
+  <img src="https://tse1.mm.bing.net/th?id=OIP.shr0RtMQC9llD7s-HFLBWAHaHa&pid=Api" alt="Doraemon" />
+  <p>Chào cậu, vậy là đã 102 ngày bọn mình quen nhau, 55 ngày yêu nhau.</p>
+</div>
+
+<div id="step3button" class="hidden">
+  <button class="button float-right" onclick="step3()">Bấm tiếp vào đây</button>
+</div>
+
+<div id="step3" class="hidden">
+  <img src="https://tse4.mm.bing.net/th?id=OIP.9yfNcGVe8VfEagiIhAZnbAHaEK&pid=Api" alt="Shin" />
+  <p>Hiện tại, bọn mình đang cách xa tận 30 km lận, nhưng tớ vẫn luôn ủng hộ và yêu cậu, dù biết cậu đi làm có phần mệt mỏi, tớ cũng muốn tạo cho cậu niềm vui nho nhỏ hihi.</p>
+  <p>Cảm ơn cậu vì tất cảaaaa, mệt mỏi gì nhớ nói tớ nha 💕</p>
+</div>
+
+<script>
+  function startSequence() {
+    document.querySelector('button').style.display = 'none';
+    document.getElementById("step1").classList.remove("hidden");
+    document.getElementById("music").play();
+  }
+
+  function step2() {
+    document.getElementById("step2").classList.remove("hidden");
+    setTimeout(() => {
+      document.getElementById("step3button").classList.remove("hidden");
+    }, 8000);
+  }
+
+  function step3() {
+    document.getElementById("step3").classList.remove("hidden");
+  }
+</script>
+
+</body>
+</html>
